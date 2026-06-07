@@ -1,4 +1,18 @@
-from src.tools.tools import web_search,scrape_url
+from src.pipelines.pipeline import run_research_pipeline
 
-result = scrape_url.invoke("https://www.reddit.com/r/SRMUNIVERSITY/")
-print(result)
+topic = input(
+    "Enter Research Topic: "
+)
+
+result = run_research_pipeline(
+    topic
+)
+
+print("\n")
+print("=" * 80)
+print("FINAL REPORT")
+print("=" * 80)
+
+print(
+    result["final_report"]
+)
